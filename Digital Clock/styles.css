@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    font-family: 'montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+}
+
+.time {
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+}
+
+
+/* body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    font-family: 'montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+h2 {
+    padding: 30px 0;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* .time {
+    display: inline;
+    position: relative;
+    margin: 10px;
+} */
+
+.time span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.time span:nth-child(1) {
+    width: 180px;
+    height: 50px;
+    color: aliceblue;
+    background-color: #008c9e;
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.time:nth-of-type(2) span:nth-child(1) {
+    background-color: rgb(75, 59, 255);
+}
+
+.time:nth-of-type(3) span:nth-child(1) {
+    background-color: rgb(196, 230, 255);
+}
+
+.time:nth-of-type(4) span:nth-child(1) {
+    background-color: rgb(253, 157, 255);
+}
+
+.time span:nth-child(2) {
+    height: 150px;
+    color: rgb(255, 255, 255);
+    background-color: aquamarine;
+    font-size: 90px;
+    font-weight: 700;
+}
+
+
+.time:nth-of-type(2) span:nth-child(2) {
+    background-color: burlywood;
+}
+
+.time:nth-of-type(3) span:nth-child(2) {
+    background-color: rgb(255, 69, 69);
+}
+
+.time:nth-of-type(4) span:nth-child(2) {
+    background-color: rgb(202, 135, 222);
+}
+
