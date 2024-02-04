@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles1.css">
+    <title>Pokemon</title>
+</head>
+
+<body>
+    <div class="grid-container">
+       
+            <div class="grid-item grid-item-1">
+                <input type="text" placeholder="Enter Pokemon name" id="name" required>
+                <h1 style="color: rgb(255, 255, 255);">GET YOUR POKEMON</h1>
+                <a href="#" style="--clr:#1e9bff" onclick="pokemonfetch()" id="btn"><span>Get Me!</span></a>
+            </div>
+            <div class="grid-item grid-item-4">
+                <img src="" alt="Pokemon image" id="image" style="display: none; height:350px;">
+                <!-- <p id="hello">kkk</p> -->
+            
+        </div>
+    </div>
+
+
+    <script>
+        function pokemonfetch() {
+            const pokemon = document.getElementById("name").value.toLowerCase();
+            document.body.classList.toggle('light-up');
+            setTimeout(function () {
+                document.body.classList.remove('light-up');
+            }, 2000);
+
+            // document.getElementById("hello").innerHTML = pokemon;
+            console.log(pokemon);
+            const apiURL = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
+            fetch(apiURL)
+                .then(res => {
+                    console.log(res);
+                    return res.json();
+                }).then(data => {
+                    const images = data.sprites.front_default;
+                    const images1 = document.getElementById("image");
+                    images1.src = images;
+                    images1.style.display = "block";
+
+                    console.log(data);
+                    console.log(data.weight);
+                    console.log(data.id);
+
+                }).catch(error => console.log(error));
+        }
+
+    </script>
+</body>
+
+</html>

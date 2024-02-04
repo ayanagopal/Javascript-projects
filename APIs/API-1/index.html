@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Soul</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="head">
+        <h1 style="color: bisque;">BLACK SOULS </h1>
+
+    </div>
+    <hr style="width:50%;margin: auto;">
+
+    <div class="card-container">
+        <div class="card">
+            <img src="images/black-tshirt.jpeg">
+            <div class="content">
+                <h1 class="a"></h1>
+                <p>ckfkefioewfmklewv kjwen
+                    cwjfnjew,
+                    fwenkjfiuwefjkewi
+                </p>
+                <a href="" class="btn">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/Black Gold Round CR.jpeg">
+            <div class="content">
+                <h1 class="a"></h1>
+                <p>ckfkefioewfmklewv kjwen
+                    cwjfnjew,
+                    fwenkjfiuwefjkewi
+                </p>
+                <a href="" class="btn">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/women-blackjacket.jpeg">
+            <div class="content">
+                <h1 class="a"></h1>
+                <p>ckfkefioewfmklewv kjwen
+                    cwjfnjew,
+                    fwenkjfiuwefjkewi
+                </p>
+                <a href="" class="btn">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/leather-jacket.jpeg">
+            <div class="content">
+                <h1 class="a"></h1>
+                <p>ckfkefioewfmklewv kjwen
+                    cwjfnjew,
+                    fwenkjfiuwefjkewi
+                </p>
+                <a href="" class="btn">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/prada.jpeg">
+            <div class="content">
+                <h1 class="a"></h1>
+                <p>ckfkefioewfmklewv kjwen
+                    cwjfnjew,
+                    fwenkjfiuwefjkewi
+                </p>
+                <a href="" class="btn">Read More</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="images/shorts.jpeg">
+            <div class="content">
+                <h1 class="a"></h1>
+                <p>ckfkefioewfmklewv kjwen
+                    cwjfnjew,
+                    fwenkjfiuwefjkewi
+                </p>
+                <a href="" class="btn">Read More</a>
+            </div>
+        </div>
+    </div>
+    <p class="demo"></p>
+    <p class="demo1"></p>
+    <p class="demo2"></p>
+    <script>
+        fetch('https://fakestoreapi.com/products').
+            then(res => {
+                console.log(res);
+                return res.json();
+            }).then(data => {
+                console.log(data);
+                const abc = data.map(i => i.price);
+                const bcd = data.map(j => j.title);
+                console.log(abc);
+                const cardElements = document.getElementsByClassName("a");
+                let filledCards = 0;
+                //Here I have only fetched the "title" from the API, the content can also be taken from the API
+                abc.forEach((element, index) => {
+                    if (filledCards < 6 && element < 20) {
+                        const heading = `<h1>${bcd[index]}</h1>`;
+                        // console.log(bcd[index]);
+                        cardElements[filledCards].insertAdjacentHTML("beforeend", heading);
+                        filledCards++;
+                    }
+                });
+            })
+
+            .catch(error => console.log(error));
+    </script>
+</body>
+
+</html>
